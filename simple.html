@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>procon32 VR</title>
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+<a-scene id="scene" background="color: #222">
+<a-plane src="./img/0001.png" position="0 2 -4" rotation="0 0 0" width="1.190" height="1.683" xcolor="red"></a-plane>
+</a-scene>
+
+<script type="module">
+import { create } from "https://js.sabae.cc/stdcomp.js";
+import { fix0 } from "https://js.sabae.cc/fix0.js";
+
+onload = () => {
+  for (let i = 1; i <= 172; i++) {
+    const x = Math.random(20);
+    const y = Math.random(20);
+    const plane = create("a-plane", scene);
+    plane.setAttribute("position", { x: 0, y: 2, z: -4 });
+    plane.setAttribute("width", w);
+    plane.setAttribute("height", h);
+    plane.setAttribute("src", "./img/" + fix0(i, 4) + ".png");
+    break;
+  }
+};
+</script>
+</body>
+</html>

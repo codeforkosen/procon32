@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>procon32 VR</title>
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+<a-scene id="scene" background="color: #222">
+</a-scene>
+
+<script type="module">
+import { Procon32 } from "./Procon32.js";
+
+onload = () => {
+  for (let i = 1; i <= Procon32.length; i += 2) {
+    const x = Math.random() * 20 - 10;
+    const z = Math.random() * 20 - 10;
+    const y = Math.random() * 20 - 10;
+    const rx = Math.random() * 360;
+    const ry = Math.random() * 180;
+    const rz = Math.random() * 360;
+    Procon32.createPage(i, x, y, z, rx, ry, rz, scene);
+    Procon32.createPage(i + 1, x, y, z, rx, ry + 180, rz, scene);
+  }
+};
+</script>
+</body>
+</html>
